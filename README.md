@@ -1,0 +1,1 @@
+Pot-App Mistral 文字识别插件
