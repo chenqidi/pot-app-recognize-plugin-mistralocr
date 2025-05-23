@@ -31,7 +31,7 @@ async function recognize(base64, lang, options) {
 
     if (res.ok) {
         let result = res.data;
-        const markdownText = result?.pages?.[0]?.markdown || "No text found";
+        const markdownText = result?.pages?.map(page => page.markdown).filter(Boolean).join('\n') || "No text found";
         if (keepMarkdownFormat === "Yes") {
             return markdownText;
         } else {
